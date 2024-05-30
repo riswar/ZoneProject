@@ -31,5 +31,5 @@ The soloution is developed using Asp.net Core MVC.
 # Available Features
  1. The zone can be created
  2. DNS records can be created for the zone
- 3. The DNs records can be delted
+ 3. The DNs records can be deleted
  4. Zone can be deleted
