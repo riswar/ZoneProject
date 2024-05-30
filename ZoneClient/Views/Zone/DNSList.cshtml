@@ -1,0 +1,34 @@
+﻿@using ZoneClient.Services
+@inject IZoneService _zoneService
+@{
+    ViewData["Title"] = "DNS Records";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <select id="ddlZoneId" asp-items="@await _zoneService.GetAllZones()" class="form-control"></select>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Zone" asp-action="CreateZone"><input type="button" value="Create Zone" id="btnCrateZone" class="btn  btn-success" /></a>
+            <input type="button" value="Delete Zone" onclick="return onClickDNSNavigation('DeleteZone')" id="btnDeleteZone" class="btn  btn-danger" />
+            <input type="button" value="Create DNS" id="btnAdd" onclick="return onClickDNSNavigation('CreateDNS')" class="btn  btn-success" />
+            <a asp-controller="Zone" asp-action="LoadInitialData"><input type="button" value="Initial Load" id="btnLoad" class="btn  btn-secondary" /></a>
+        </div>
+    </div>
+    <div class="text-center">
+        <table id="dtDNSList" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Zone</th>
+                    <th>Fqdn</th>
+                    <th>Record Name</th>
+                    <th>Type</th>
+                    <th>Ttl</th>
+                    <th>Data</th>
+                    <th>Command</th>
+                </tr>
+            </thead>
+        </table>
+    </div>

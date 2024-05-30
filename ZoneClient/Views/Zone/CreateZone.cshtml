@@ -1,0 +1,53 @@
+﻿@using ZoneClient.Services
+@model ZoneClient.Models.CreateZoneViewModel
+@inject IConfigDataService _configData
+@{
+    ViewData["Title"] = "Create Zone";
+    int Id = (ViewData["Id"] ==null?0: (int)ViewData["Id"]);
+}
+
+<h1>Create Zone</h1>
+
+<hr />
+@{
+    if (ViewData["Status"] != null && (bool)ViewData["Status"])
+    {
+        <br />
+        <p> The Zone record created successfully </p>
+        <br />
+        <p>
+            <a asp-action="CreateDNS" asp-route-id="@Id"><input type="button" value="Create DNS" id="btnCrateZone" class="btn  btn-success" /></a> &nbsp;<a asp-action="CreateZone"><input type="button" value="Create another zone" id="btnCreateZone" class="btn  btn-warning" /></a>
+        </p>
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="col-md-4">
+                <form asp-action="CreateZone">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" placeholder="devselect.com" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <br />
+                        <p><input type="submit" value="CreateZone" class="btn btn-primary" /></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+}
+<div>
+    <p>
+        <a asp-action="DNSList">Back to List</a>
+    </p>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,58 @@
+﻿@using ZoneClient.Services
+@model List<ZoneClient.Models.DnsRecordListViewModel>
+@inject IZoneService _zoneService
+
+
+@{
+    if (ViewData["Status"] != null && (bool)ViewData["Status"])
+    {
+        ViewData["Title"] = $"Delete Zone Record";
+
+        <br />
+        <p> The Zone record deleted successfully </p>
+    }
+    else
+    {
+        var zoneData = await _zoneService.GetZoneById((int)ViewData["Id"]);
+
+        ViewData["Title"] = $"Delete Zone ({zoneData.Name}) Record";
+        <h1>Delete Zone(@zoneData.Name) Record</h1>
+        
+
+        <h3>Are you sure you want to delete zone and associated records?</h3>
+        <div>
+            <hr />
+
+            <table class="display dataTable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Fqdn</th>
+                        <th>Record Name</th>
+                        <th>Type</th>
+                        <th>Ttl</th>
+                        <th>Data</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                    {
+                         <tr>
+                        <td>@item.Fqdn</td>
+                        <td>@item.RecordName</td>
+                        <td>@item.Type</td>
+                        <td>@item.Ttl</td>
+                        <td>@item.Data</td>
+                    </tr>
+                    }
+                    </tbody>
+            </table>
+            <form asp-action="DeleteZoneConfirm">
+                <input type="hidden" id="id" name="id" value="@ViewData["Id"]" />
+                <input type="submit" value="DeleteZoneConfirm" class="btn btn-danger" />
+            </form>
+        </div>
+    }
+}
+<div>
+    <p><a asp-action="DNSList">Back to List</a></p>
+</div>

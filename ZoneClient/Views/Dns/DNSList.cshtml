@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "DNS Records";
+}
+<div class="text-center">
+
+    <div class="m-2 d-flex justify-content-end">
+        <a asp-controller="Zone" asp-action="LoadInitialData"><input type="button" value="Initial Load" id="btnLoad" class="btn  btn-secondary" /> </a> &nbsp;
+        <a asp-controller="Zone" asp-action="CreateDNS"><input type="button" value="Create DNS" id="btnAdd" class="btn  btn-primary" /> </a>
+    </div>
+    <table id="dtDNSList" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Zone</th>
+                <th>Fqdn</th>
+                <th>Record Name</th>
+                <th>Type</th>
+                <th>Ttl</th>
+                <th>Data</th>
+                <th>Command</th>
+
+            </tr>
+        </thead>
+    </table>
+</div>
