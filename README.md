@@ -36,10 +36,10 @@ The soloution is developed using Asp.net Core MVC.
 
 # How to update the port # if it is needed
 
-1. Open launchSettings.JSON file on ZoneApi --> Properties --> launchSettings.JSON
+1. Open launchSettings.JSON file on ZoneApi project --> Properties --> launchSettings.JSON
 2. Look JSON property applicationUrl at profiles --> https--> applicationUrl
 3. Replace port # 7124 to xxxx
-4. Open Program.cs in ZoneClient
+4. Open Program.cs in ZoneClient project
 5. Update Port # from 7124 to xxxx(that is used on step 3), make sure sure it is updated on two places ( Line # 10 & 14)
 
 # Available Features
