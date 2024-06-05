@@ -53,3 +53,23 @@ The soloution is developed using Asp.net Core MVC.
  2. DNS records can be created for the zone
  3. The DNs records can be deleted
  4. Zone can be deleted
+
+# Appendix
+    
+## Successfull application Screenshot
+
+### 1. API Screen on Development Mode
+   ![image](https://github.com/riswar/ZoneProject/assets/33431575/7998812b-ba79-4590-a96f-a6cfeb950d91)
+### 2. Client app Screen
+![image](https://github.com/riswar/ZoneProject/assets/33431575/32667bb6-11d1-471f-9742-657272061e94)
+
+### 3. After Initial Load 
+
+   1. Click Initial Load
+   2. It takes to new page with informatin
+   3. Click Zone Client
+      
+![image](https://github.com/riswar/ZoneProject/assets/33431575/0cbe08ec-2607-42a6-95ec-17ad42a1dd11)
+
+
+
