@@ -34,7 +34,7 @@ The soloution is developed using Asp.net Core MVC.
 9. Run F5
 10. Click the Initial load to validate the pagination (It may take a few seconds as it inserts the data in loop from Client to API
 
-# How to update the port # if it is needed
+# How to update the port # if it is needed for API
 
 1. Open launchSettings.JSON file on ZoneApi project --> Properties --> launchSettings.JSON
 2. Look JSON property applicationUrl at profiles --> https--> applicationUrl
