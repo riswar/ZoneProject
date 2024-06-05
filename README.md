@@ -25,8 +25,22 @@ The soloution is developed using Asp.net Core MVC.
 # Instruction to run the application 
 1. Extract the Zone.Zip into you local folder
 2. Open ZoneProject.sln in Visual Studio 2022 and .NET 8 should have been installed
-3. Run F5
-4. Click the Initial load to validate the pagination
+3. Right click on the Zone Project Solution file
+4. Go to Properties
+5. Select "Multiple startup projects"
+6. Select Zone Client then Select Start on Action Column
+7. Select Zone Api then Select Start on Action Column
+8. Click Apply
+9. Run F5
+10. Click the Initial load to validate the pagination (It may take a few seconds as it inserts the data in loop from Client to API
+
+# How to update updating the port if it is needed
+
+1. Open launchSettings.JSON file on ZoneApi --> Properties --> launchSettings.JSON
+2. Look JSON property applicationUrl at profiles --> https--> applicationUrl
+3. Replace port # 7124 to xxxx
+4. Open Program.cs in ZoneClient
+5. Update Port # from 7124 to xxxx(that is used on step 3), make sure sure it is updated on two places ( Line # 10 & 14)
 
 # Available Features
  1. The zone can be created
