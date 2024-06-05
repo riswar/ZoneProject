@@ -46,7 +46,7 @@ The soloution is developed using Asp.net Core MVC.
 
 1. Open launchSettings.JSON file on ZoneClient project --> Properties --> launchSettings.JSON
 2. Look JSON property applicationUrl at profiles --> https--> applicationUrl
-3. Replace port # 7297 to yyyy
+3. Replace port # 7296 to yyyy
    
 # Available Features
  1. The zone can be created
