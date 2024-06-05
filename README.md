@@ -39,9 +39,15 @@ The soloution is developed using Asp.net Core MVC.
 1. Open launchSettings.JSON file on ZoneApi project --> Properties --> launchSettings.JSON
 2. Look JSON property applicationUrl at profiles --> https--> applicationUrl
 3. Replace port # 7124 to xxxx
-4. Open Program.cs in ZoneClient project
+4. Open Program.cs in ZoneClient project (This is to replace the port where it is referenced)
 5. Update Port # from 7124 to xxxx(that is used on step 3), make sure sure it is updated on two places ( Line # 10 & 14)
 
+# How to update the port # if it is needed for Client Project
+
+1. Open launchSettings.JSON file on ZoneClient project --> Properties --> launchSettings.JSON
+2. Look JSON property applicationUrl at profiles --> https--> applicationUrl
+3. Replace port # 7297 to yyyy
+   
 # Available Features
  1. The zone can be created
  2. DNS records can be created for the zone
